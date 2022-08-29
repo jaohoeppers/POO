@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Aula3 {
+
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		final int tam = 10;
+		float maior = 0;
+		float menor =1000;
+		
+		int[] vet=new int[tam];
+		
+			for(int x=0;x<tam;x++) {
+				System.out.print("Digite a idade do "+(x+1)+"º membro da sua familia");
+				System.out.print("um de cada vez :");				
+				
+				vet[x] = entrada.nextInt();	
+				
+				if(vet[x]>maior) {
+					maior=vet[x];
+				}
+				if(vet[x]<menor) {
+					menor=vet[x];
+				}
+				
+			}
+			int soma=0;
+			for(int x=0;x<tam;x++) {
+				System.out.print(vet[x]+"|");
+				soma=soma+vet[x];
+			}
+		float media=(soma/tam);
+		System.out.println("\n A soma das idades deu: "+soma);
+		System.out.println("\n A media das idades deu: "+media);
+		System.out.println("\n O menor numero digitado foi: "+menor);
+		System.out.println("\n O maior numero digitado foi: "+maior);
+		
+		entrada.close();
+	}
+}

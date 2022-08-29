@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class EX_17 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.println("Digite um numero inteiro");
+		int num = entrada.nextInt();		
+		
+		if(num%num==1) {
+			System.out.println("Esse numero é primo");
+		}
+		else {
+			System.out.println("Esse numero nao é primo");
+		}
+		
+	}
+
+}
