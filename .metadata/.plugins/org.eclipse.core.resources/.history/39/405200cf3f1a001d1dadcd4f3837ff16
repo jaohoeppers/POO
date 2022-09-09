@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class OlaMundo {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Ola Mundo");
+
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.print("Informe um numero (int): ");
+		int Num1 = entrada.nextInt();
+		
+		System.out.println("Num1:" + Num1);
+		
+		entrada.close();
+		
+	}
+
+}
