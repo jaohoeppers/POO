@@ -1,0 +1,28 @@
+
+public class CONTASIMPLES extends CONTA {
+
+	public CONTASIMPLES(String banco) {
+		super(banco);
+		// TODO Auto-generated constructor stub
+	}
+
+	private double saldopoupança;
+	boolean num=true;
+	
+	public boolean deposito(double valor) {
+		if (valor<0) {
+		num =true;	
+			
+		}
+		return num ;
+	}
+	
+	public boolean saque(double valor) {
+		if (valor<0) {
+		num =false;	
+			
+		}
+		return num ;
+	}
+	
+}

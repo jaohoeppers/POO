@@ -1,0 +1,25 @@
+package com.joao.funcao;
+
+import java.util.Random;
+
+public class Minhasfuncoes {
+
+	public static int[] criaVetor(int tamanho){
+		Random gerador = new Random();
+		int[]v = new int[tamanho];
+		for(int i=0;i<tamanho;i++) {
+			v[i] = gerador.nextInt(100);
+		}
+		return v;
+	}
+	
+	public static String mostrar (int[]v){
+		String saida="";
+		for(int i=0;i<v.length;i++) {
+			saida=saida+v[i]+" | ";
+		}
+		return saida;
+	}
+	
+	
+}

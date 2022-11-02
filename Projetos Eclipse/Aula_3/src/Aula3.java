@@ -41,6 +41,7 @@ public class Aula3 {
 		}
 			
 		for(int x=0;x<lin;x++) {
+			System.out.println("\n");
 			for(int y=0;y<col;y++) {
 				System.out.print(vet[x][y]+"|");
 				soma=soma+vet[x][y];
