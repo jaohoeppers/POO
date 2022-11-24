@@ -1,0 +1,34 @@
+
+public class TRNA {
+
+	private int tam;
+	private String[]fita = new String[tam];
+	private String[]transcricao = new String[tam];
+	
+	public TRNA(int tam) {
+		this.tam=tam;
+	}
+	
+	
+	public int getTam() {
+		return tam;
+	}
+	public void setTam(int tam) {
+		this.tam = tam;
+	}
+	public String[] getFita() {
+		return fita;
+	}
+	public void setFita(String[] fita) {
+		this.fita = fita;
+	}
+	public String[] getTranscricao() {
+		return transcricao;
+	}
+	public void setTranscricao(String[] transcricao) {
+		this.transcricao = transcricao;
+	}
+	
+	
+	
+}

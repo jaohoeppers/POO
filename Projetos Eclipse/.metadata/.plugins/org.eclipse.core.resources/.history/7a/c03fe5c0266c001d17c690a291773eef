@@ -1,0 +1,12 @@
+import java.util.List;
+import java.util.ArrayList;
+
+public class Locadora {
+	
+	private List<Veiculo> veiculos = new ArrayList<Veiculo>();
+	private List<Cliente> clientes = new ArrayList<Cliente>();
+	private List<Locacao> locacoes = new ArrayList<Locacao>(); 
+	
+	
+
+}

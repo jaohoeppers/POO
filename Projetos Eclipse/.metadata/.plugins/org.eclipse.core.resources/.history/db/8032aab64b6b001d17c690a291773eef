@@ -1,0 +1,30 @@
+import java.util.Calendar;
+
+public class LocacaoMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Calendar data = Calendar.getInstance();
+		Calendar data1 = Calendar.getInstance();
+		
+		data.set(Calendar.DATE, 22);
+		data.set(Calendar.MONTH, 9);
+		data.set(Calendar.YEAR, 2022);
+		data.set(Calendar.HOUR, 16);
+		
+		data1.set(Calendar.DATE, 5);
+		data1.set(Calendar.MONTH, 11);
+		data1.set(Calendar.YEAR,2022);
+		data1.set(Calendar.HOUR,11);
+		
+		Locacao tempo = new Locacao();
+		
+		System.out.println(tempo.contadias(data, data1));
+		
+
+	}
+
+	
+	
+}

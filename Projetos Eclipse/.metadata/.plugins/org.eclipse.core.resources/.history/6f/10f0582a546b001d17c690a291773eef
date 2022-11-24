@@ -1,0 +1,95 @@
+import java.util.Calendar;
+import java.util.Date;
+
+public class Locacao {
+	
+	protected Veiculo veiculo;
+	protected Cliente cliente;
+	
+	public Locacao(){}	
+	
+//public long contadias(Calendar inicio, Calendar fim) {
+		
+	//	Date datai = inicio.getTime();
+		//Date dataf = fim.getTime();
+		
+		//final double DAY_MILISECONDS = 24.0 * 60 * 60 * 1000;
+		//long dias = (long)((dataf.getTime()- datai.getTime()));
+		//return dias;
+		
+	//}
+	
+	public int contadias (Calendar inicio, Calendar fim) {
+		
+		int dias=0;
+		inicio.set(Calendar.MONTH, inicio.get(Calendar.MONTH)-1);
+		fim.set(Calendar.MONTH, fim.get(Calendar.MONTH)-1);
+		
+		
+		
+		if (((fim.get(Calendar.MONTH))-(inicio.get(Calendar.MONTH)))>1||((fim.get(Calendar.MONTH))-(inicio.get(Calendar.MONTH)))<0) {
+			Calendar mes = Calendar.getInstance();
+			
+			for(int i=inicio.get(Calendar.MONTH);i<fim.get(Calendar.MONTH);i++) {
+				
+				if (i==11) {
+					i=0;
+				}
+				
+				if (i==inicio.get(Calendar.MONTH)){
+					i++;
+				}
+				
+				mes.set(Calendar.MONTH, i);
+				mes.set(Calendar.YEAR, inicio.get(Calendar.YEAR));
+				
+				dias= dias+mes.getActualMaximum(Calendar.DAY_OF_MONTH);
+				
+				System.out.println("dias dos meses do meio: "+dias);
+			}
+		}
+		
+		//if(((fim.get(Calendar.YEAR))-(inicio.get(Calendar.YEAR)))>1);
+		//	Calendar.getInstance();
+			
+		//	for(int i=inicio.get(Calendar.MONTH);i!=fim.get(Calendar.MONTH);i++) {
+				
+			//	if(i==inicio.get(Calendar.MONTH)) {
+			//		i++;
+			//	}
+				
+		//	}
+		
+		//Calendar cali=Calendar.getInstance();
+		//Calendar calf=Calendar.getInstance();
+		
+		//cali.set(Calendar.YEAR, inicio.get(Calendar.YEAR));
+		//cali.set(Calendar.MONTH, inicio.get(Calendar.MONTH)-1);
+		
+		int diai=inicio.get(Calendar.DATE)-1;
+		int diaf=fim.get(Calendar.DATE);
+		
+		Calendar mesi=Calendar.getInstance();
+		mesi.set(Calendar.MONTH, inicio.get(Calendar.MONTH));
+		mesi.set(Calendar.YEAR, inicio.get(Calendar.YEAR));
+		
+		int diasmesi=mesi.getActualMaximum(Calendar.DAY_OF_MONTH);
+		
+		//int mesi=(inicio.get(Calendar.MONTH)-1);
+		//int mesf=(fim.get(Calendar.MONTH)-1);
+		
+		
+		int diastotal=((diasmesi)-diai)+diaf+1;
+		
+		if(fim.get(Calendar.HOUR_OF_DAY)>12) {
+			diastotal=diastotal+1;
+		}
+		System.out.println("dia inicio "+diai);
+		System.out.println("dia final "+diaf);
+		System.out.println("dias totais inicio + fim "+diastotal);
+		
+		return diastotal+dias;
+		
+	}
+
+}

@@ -1,0 +1,50 @@
+import java.util.Calendar;
+import java.util.Date;
+
+public class Locacao {
+	
+	protected Veiculo veiculo;
+	protected Cliente cliente;
+	
+	public Locacao(){}	
+	
+//public long contadias(Calendar inicio, Calendar fim) {
+		
+	//	Date datai = inicio.getTime();
+		//Date dataf = fim.getTime();
+		
+		//final double DAY_MILISECONDS = 24.0 * 60 * 60 * 1000;
+		//long dias = (long)((dataf.getTime()- datai.getTime()));
+		//return dias;
+		
+	//}
+	
+	public int contadias (Calendar inicio, Calendar fim) {
+		
+		Calendar cali=Calendar.getInstance();
+		Calendar calf=Calendar.getInstance();
+		cali.set(Calendar.YEAR, inicio.get(Calendar.YEAR));
+		cali.set(Calendar.MONTH, inicio.get(Calendar.MONTH)-1);
+		
+		int diai=inicio.get(Calendar.DATE);
+		int diaf=fim.get(Calendar.DATE);
+		
+		int mesi=(inicio.get(Calendar.MONTH)-1);
+		int mesf=(fim.get(Calendar.MONTH)-1);
+		
+		int diastotal=(cali.getActualMaximum(Calendar.DAY_OF_MONTH))-((diai)+1)+diaf;
+		
+		
+		
+		
+		
+		
+		
+		
+		return diastotal;
+		
+		//int diasi=Calendar.
+		
+	}
+
+}

@@ -1,0 +1,7 @@
+package atendimentomedico;
+
+public class Medico extends pessoa {
+	
+	private List<Especialidade> Especialidades = new ArrayList<Especialidades>;
+
+}

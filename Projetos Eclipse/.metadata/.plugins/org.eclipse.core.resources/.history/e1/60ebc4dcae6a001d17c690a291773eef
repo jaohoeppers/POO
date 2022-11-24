@@ -1,0 +1,71 @@
+import java.util.Calendar;
+import java.util.Date;
+
+public class Locacao {
+	
+	protected Veiculo veiculo;
+	protected Cliente cliente;
+	
+	public Locacao(){}	
+	
+//public long contadias(Calendar inicio, Calendar fim) {
+		
+	//	Date datai = inicio.getTime();
+		//Date dataf = fim.getTime();
+		
+		//final double DAY_MILISECONDS = 24.0 * 60 * 60 * 1000;
+		//long dias = (long)((dataf.getTime()- datai.getTime()));
+		//return dias;
+		
+	//}
+	
+	public int contadias (Calendar inicio, Calendar fim) {
+		
+		int dias=0;
+		inicio.set(Calendar.MONTH, inicio.get(Calendar.MONTH)-1);
+		fim.set(Calendar.MONTH, fim.get(Calendar.MONTH)-1);
+		
+		if (((fim.get(Calendar.MONTH))-(inicio.get(Calendar.MONTH)))>1) {
+			Calendar mes = Calendar.getInstance();
+			
+			for(int i=inicio.get(Calendar.MONTH);i<fim.get(Calendar.MONTH);i++) {
+				
+				i++;
+				
+				mes.set(Calendar.MONTH, i);
+				mes.set(Calendar.YEAR, inicio.get(Calendar.YEAR));
+				
+				dias= dias+mes.getActualMaximum(Calendar.DAY_OF_MONTH);
+				
+				System.out.println(dias);
+			}
+		}
+		
+		//Calendar cali=Calendar.getInstance();
+		//Calendar calf=Calendar.getInstance();
+		
+		//cali.set(Calendar.YEAR, inicio.get(Calendar.YEAR));
+		//cali.set(Calendar.MONTH, inicio.get(Calendar.MONTH)-1);
+		
+		int diai=inicio.get(Calendar.DATE)-1;
+		int diaf=fim.get(Calendar.DATE)-1;
+		
+		//int mesi=(inicio.get(Calendar.MONTH)-1);
+		//int mesf=(fim.get(Calendar.MONTH)-1);
+		
+		int diastotal=((inicio.getActualMaximum(Calendar.DAY_OF_MONTH))-diai)+diaf;
+		System.out.println(diastotal);
+		System.out.println(diai);
+		System.out.println(diaf);
+		System.out.println(inicio.getActualMaximum(Calendar.DAY_OF_MONTH));
+		
+		if(fim.get(Calendar.HOUR)>12) {
+			diastotal++;
+		}
+		System.out.println(diastotal);
+		
+		return diastotal+dias;
+		
+	}
+
+}

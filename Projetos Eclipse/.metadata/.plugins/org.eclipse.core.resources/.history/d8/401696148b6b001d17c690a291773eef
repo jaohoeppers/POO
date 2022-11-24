@@ -1,0 +1,64 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
+import java.util.Calendar;
+
+public class LocacaoMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Calendar data = Calendar.getInstance();
+		Calendar data1 = Calendar.getInstance();
+		
+		data.set(Calendar.DATE, 22);
+		data.set(Calendar.MONTH, 15);
+		data.set(Calendar.YEAR, 2022);
+		data.set(Calendar.HOUR, 16);
+		
+		data1.set(Calendar.DATE, 5);
+		data1.set(Calendar.MONTH, 2);
+		data1.set(Calendar.YEAR,2026);
+		data1.set(Calendar.HOUR_OF_DAY,11);
+		
+		Locacao tempo = new Locacao(data);
+		
+		System.out.println(tempo.Locacao2());
+		
+		//System.out.println("dias total + dias meses "+tempo.contadias(data1));
+		
+		
+		
+		
+		
+
+	}
+	
+	public static boolean isDateValid(String strDate) {
+	    String dateFormat = "dd/MM/uuuu";
+
+	    DateTimeFormatter dateTimeFormatter = DateTimeFormatter
+	    .ofPattern(dateFormat)
+	    .withResolverStyle(ResolverStyle.STRICT);
+	    try {
+	        LocalDate date = LocalDate.parse(strDate, dateTimeFormatter);
+	        return true;
+	    } catch (DateTimeParseException e) {
+	       return false;
+	    } 
+	}
+
+	
+
+}
+//menor que 0
+//dias dos anos do meio: 365
+//dias dos anos do meio: 730
+//dias dos anos do meio: 1095
+//dias dos meses do meio: 31
+//dias dos meses do meio: 62
+//dia inicio 22
+//dia final 5
+//dias totais inicio + fim 14
+//dias total + dias meses 1171

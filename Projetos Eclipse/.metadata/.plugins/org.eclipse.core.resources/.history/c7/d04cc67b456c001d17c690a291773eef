@@ -1,0 +1,19 @@
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.temporal.ChronoUnit;
+
+public class meupau {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		LocalDate date1= LocalDate.of(2022,Month.JUNE, 5);
+		
+		var dias= ChronoUnit.DAYS.between(date1, LocalDate.now());
+		
+		System.out.println(dias);
+		
+		
+	}
+
+}

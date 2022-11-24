@@ -1,0 +1,48 @@
+import java.util.List;
+import java.util.ArrayList;
+
+public class Locadora {
+	
+	private List<Veiculo> veiculos = new ArrayList<Veiculo>();
+	List<Cliente> clientes = new ArrayList<Cliente>();
+	private List<Locacao> locacoes = new ArrayList<Locacao>(); 
+	
+	
+	
+	public static boolean addcliente (Cliente nome) {
+		
+		clientes.add(nome);
+		return true;
+	}
+	
+	
+	
+	
+	public List<Veiculo> getVeiculos() {
+		return veiculos;
+	}
+
+	public void setVeiculos(List<Veiculo> veiculos) {
+		this.veiculos = veiculos;
+	}
+
+	public List<Cliente> getClientes() {
+		return clientes;
+	}
+	
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+
+	public List<Locacao> getLocacoes() {
+		return locacoes;
+	}
+
+	public void setLocacoes(List<Locacao> locacoes) {
+		this.locacoes = locacoes;
+	}
+
+
+	
+
+}

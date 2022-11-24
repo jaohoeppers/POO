@@ -1,0 +1,15 @@
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+public class Periodo {
+	
+	public static List<Date> periodolocacao (Date inicio, Date fim) {
+		List<Date> dias = new ArrayList<Date>();
+		Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.DATE, inicio);
+		
+	}
+
+}

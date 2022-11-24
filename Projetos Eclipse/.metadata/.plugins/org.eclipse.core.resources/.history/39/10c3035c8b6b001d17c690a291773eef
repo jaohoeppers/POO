@@ -1,0 +1,98 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
+import java.util.Calendar;
+import java.util.Scanner;
+
+public class LocacaoMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner ent = new Scanner(System.in);
+		
+		Calendar data = Calendar.getInstance();
+		Calendar data1 = Calendar.getInstance();
+		
+		data.set(Calendar.DATE, 22);
+		data.set(Calendar.MONTH, 12);
+		data.set(Calendar.YEAR, 2022);
+		data.set(Calendar.HOUR, 16);
+		
+		data1.set(Calendar.DATE, 5);
+		data1.set(Calendar.MONTH, 2);
+		data1.set(Calendar.YEAR,2026);
+		data1.set(Calendar.HOUR_OF_DAY,11);
+		
+		Locacao tempo = new Locacao(data);
+		
+		System.out.println(tempo.Locacao2());
+		
+		//System.out.println("dias total + dias meses "+tempo.contadias(data1));
+		
+		
+		
+		
+		System.out.println("Digite a data inicial da locaçao");
+		System.out.println("AAAA/MM/DD");
+		
+		Calendar check=Calendar.getInstance();
+		
+		
+		boolean val=true;
+		
+		check.set(Calendar.YEAR,ent.nextInt());
+		System.out.println("Ano: "+check.get(Calendar.YEAR,ent.nextInt()));
+		check.set(Calendar.MONTH,ent.nextInt());
+		check.set(Calendar.DATE,ent.nextInt());
+		
+		Locacao loc=new Locacao(check);
+				
+		while(loc.validardata()){
+			
+			System.out.println("ESSA DATA NAO EXISTE, DIGITE UMA DATA VALIDA");
+			System.out.println("AAAA/MM/DD");
+			
+			check.set(Calendar.YEAR,ent.nextInt());
+			check.set(Calendar.MONTH,ent.nextInt());
+			check.set(Calendar.DATE,ent.nextInt());
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		while(val){
+			
+		}
+		
+		
+		
+
+	}
+	
+	public static boolean isDateValid(String strDate) {
+	    String dateFormat = "dd/MM/uuuu";
+
+	    DateTimeFormatter dateTimeFormatter = DateTimeFormatter
+	    .ofPattern(dateFormat)
+	    .withResolverStyle(ResolverStyle.STRICT);
+	    try {
+	        LocalDate date = LocalDate.parse(strDate, dateTimeFormatter);
+	        return true;
+	    } catch (DateTimeParseException e) {
+	       return false;
+	    } 
+	}
+	
+	
+	
+
+	
+
+}

@@ -1,0 +1,15 @@
+package com.joao.funcao;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub	
+		double n3=soma(3,4);
+		System.out.println(n3);
+	}
+	
+	public static double soma(double n1, double n2) {
+		return(n1+n2);
+	}
+
+}

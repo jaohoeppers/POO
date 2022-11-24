@@ -1,0 +1,28 @@
+import java.util.Calendar;
+
+public class LocacaoMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Calendar data = Calendar.getInstance();
+		Calendar data1 = Calendar.getInstance();
+		
+		data.set(Calendar.DATE, 5);
+		data.set(Calendar.MONTH, 4);
+		data.set(Calendar.YEAR, 2010);
+		
+		data1.set(Calendar.DATE, 15);
+		data1.set(Calendar.MONTH, 4);
+		data1.set(Calendar.YEAR,2010);
+		
+		Locacao tempo = new Locacao();
+		
+		System.out.println(tempo.contadias(data, data1));
+		
+
+	}
+
+	
+	
+}
