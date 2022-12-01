@@ -55,7 +55,7 @@ public class LocacaoMain {
 		System.out.print("Dia: ");
 		peg.set(Calendar.DATE,ent.nextInt());
 		
-		Locacao2 loc=new Locacao2(joao);
+		Locacao loc=new Locacao(joao);
 				
 		while(!(loc.validardata(peg))){
 			
@@ -115,6 +115,7 @@ public class LocacaoMain {
 	}
 	
 	public static boolean isDateValid(String strDate) {
+		
 	    String dateFormat = "dd/MM/uuuu";
 
 	    DateTimeFormatter dateTimeFormatter = DateTimeFormatter

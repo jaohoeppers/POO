@@ -3,7 +3,7 @@ public class Cliente {
 	
 	private String nome;
 	private String email;
-	private boolean ativo;
+	private String ativo;
 	
 	public String getNome() {
 		return nome;
@@ -17,18 +17,19 @@ public class Cliente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public boolean isAtivo() {
+	public String getAtivo() {
 		return ativo;
 	}
-	public void setAtivo(boolean ativo) {
+	public void setAtivo(String ativo) {
 		this.ativo = ativo;
 	}
 	
-	public Cliente(String nome, String email, boolean ativo) {
+	public Cliente(String nome, String email, String ativo) {
 		this.nome=nome;
 		this.email=email;
 		this.ativo=ativo;
 	}
+	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();

@@ -1,0 +1,17 @@
+package com.classes.main;
+
+import com.classes.BO.MarcaBO;
+import com.classes.DTO.Cliente;
+
+public class MainProcurarPorCodigo {
+
+	public static void main(String[] args) {
+			
+		// Teste Procurar por Codigo
+		MarcaBO marcaBO = new MarcaBO();
+		Cliente marca = new Cliente(1,"");
+		marca = marcaBO.procurarPorCodigo(marca);
+		System.out.println(marca);
+		
+	}
+}

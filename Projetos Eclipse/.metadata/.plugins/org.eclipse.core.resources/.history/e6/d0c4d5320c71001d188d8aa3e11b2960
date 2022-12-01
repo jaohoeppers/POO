@@ -1,0 +1,173 @@
+package com.classes.DTO;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
+import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
+
+public class Locacao {
+	
+	private int codigo;
+	protected Cliente cliente;
+	protected Veiculo veiculo;
+	private double valor;
+	private Calendar inicio;
+	private Calendar fim;
+	
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public Veiculo getVeiculo() {
+		return veiculo;
+	}
+
+	public void setVeiculo(Veiculo veiculo) {
+		this.veiculo = veiculo;
+	}
+
+	public double getValor() {
+		return valor;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+
+	public Calendar getInicio() {
+		return inicio;
+	}
+
+	public void setInicio(Calendar inicio) {
+		this.inicio = inicio;
+	}
+
+	public Calendar getFim() {
+		return fim;
+	}
+
+	public void setFim(Calendar fim) {
+		this.fim = fim;
+	}
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public  Locacao(Cliente cliente, Veiculo veiculo) {
+		this.cliente=cliente;
+		this.veiculo=veiculo;
+	}
+	
+	public Locacao(){};
+	
+	
+///////////////////////////////////////////////////////////////////////////////
+	
+	
+	public boolean validardata(Calendar inicioo){
+		
+		boolean diab=false;
+		boolean mesb=false;
+		String strDate=("");
+		int dia=inicioo.get(Calendar.DATE);
+		int mes=inicioo.get(Calendar.MONTH);
+		int ano=inicioo.get(Calendar.YEAR);
+		String diaa=("");
+		String mess=("");
+		
+		if(dia<10) {
+			diaa=("0"+dia);
+			diab=true;
+		}
+		if(mes<10) {
+			mess=("0"+mes);
+			mesb=true;
+		}
+		
+		if(diab) {
+			strDate=(diaa+"/"+mes+"/"+ano);
+		}
+		if(mesb) {
+			strDate=(dia+"/"+mess+"/"+ano);
+		}
+		if(diab&mesb) {
+			strDate=(diaa+"/"+mess+"/"+ano);
+		}
+		else {
+			strDate=(dia+"/"+mes+"/"+ano);
+		}
+	
+	    String dateFormat = "dd/MM/uuuu";
+
+	    DateTimeFormatter dateTimeFormatter = DateTimeFormatter
+	    .ofPattern(dateFormat)
+	    .withResolverStyle(ResolverStyle.STRICT);
+	    try {
+	        LocalDate date = LocalDate.parse(strDate, dateTimeFormatter);
+	        return true;
+	    } catch (DateTimeParseException e) {
+	       return false;
+	    } 
+	
+	}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	public long contadias() {
+
+		LocalDate data1= LocalDate.of(this.inicio.get(Calendar.YEAR),this.inicio.get(Calendar.MONTH),this.inicio.get(Calendar.DATE));
+		LocalDate data2= LocalDate.of(this.fim.get(Calendar.YEAR),this.fim.get(Calendar.MONTH),this.fim.get(Calendar.DATE));
+
+		var dias= ChronoUnit.DAYS.between(data1, data2);
+		
+		if(fim.get(Calendar.HOUR_OF_DAY)>12) {
+			dias=dias+1;
+		}
+		
+		return dias;
+		
+	}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	public double valorperiodo(int dias) {
+		
+		this.valor=(dias*veiculo.getTaxa());
+		
+		return (dias*veiculo.getTaxa());
+		
+	}
+	
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+	
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Locacao2 [cliente=");
+		builder.append(cliente);
+		builder.append(", veiculo=");
+		builder.append(veiculo);
+		builder.append(", valor=");
+		builder.append(valor);
+		builder.append("]");
+		return builder.toString();
+	}
+	
+	
+}

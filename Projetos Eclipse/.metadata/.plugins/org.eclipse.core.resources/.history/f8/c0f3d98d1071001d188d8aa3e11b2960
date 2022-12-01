@@ -1,0 +1,18 @@
+package com.classes.main;
+
+import com.classes.BO.MarcaBO;
+import com.classes.DTO.Cliente;
+
+public class MainProcurarPorDescricao {
+
+	public static void main(String[] args) {
+
+		// Teste Procurar por Descricao
+		// retorna o primeiro encontrado
+		MarcaBO marcaBO = new MarcaBO();
+		Cliente marca = new Cliente("Android");
+		marca = marcaBO.procurarPorDescricao(marca);
+		System.out.println(marca);
+
+	}
+}

@@ -1,0 +1,18 @@
+package com.classes.mainFaturamento;
+
+import com.classes.BO.FaturamentoBO;
+import com.classes.DTO.Faturamento;
+
+public class MainProcurarPorInicio {
+
+	public static void main(String[] args) {
+
+		// Teste Procurar por Descricao
+		// retorna o primeiro encontrado
+		FaturamentoBO marcaBO = new FaturamentoBO();
+		Faturamento marca = new Faturamento(inicio);
+		marca = marcaBO.procurarPorInicio(marca);
+		System.out.println(marca);
+
+	}
+}

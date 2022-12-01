@@ -1,0 +1,26 @@
+package com.classes.mainVeiculo;
+
+import com.classes.BO.VeiculoBO;
+import com.classes.DTO.Veiculo;
+
+public class MainInsercao {
+	public static void main(String[] args) {
+		// Teste Inserir
+		VeiculoBO marcaBO = new VeiculoBO();
+		Veiculo marca = new Veiculo("Celtinha rebaixado", (float) 13.60);
+		if (marcaBO.inserir(marca))
+			System.out.println("Inserido com Sucesso");
+		else
+			System.out.println("Erro ao Inserir");
+		marca = new Veiculo("Saveiro cross de trilha",(float) 60.20);
+		if (marcaBO.inserir(marca))
+			System.out.println("Inserido com Sucesso");
+		else
+			System.out.println("Erro ao Inserir");
+		marca = new Veiculo("Marea quebrado",(float) 3.60);
+		if (marcaBO.inserir(marca))
+			System.out.println("Inserido com Sucesso");
+		else
+			System.out.println("Erro ao Inserir");
+	}
+}

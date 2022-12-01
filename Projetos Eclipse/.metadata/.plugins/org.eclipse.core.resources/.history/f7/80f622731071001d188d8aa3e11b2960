@@ -1,0 +1,40 @@
+package com.classes.BO;
+
+import com.classes.DTO.Cliente;
+import com.classes.DAO.MarcaDAO;
+import java.util.List;
+
+public class MarcaBO {
+
+    public boolean inserir(Cliente marca){
+        if (existe(marca) != true) {
+            MarcaDAO marcasDAO = new MarcaDAO();
+            return marcasDAO.inserir(marca);
+        }
+        return false;
+    }
+    public boolean alterar(Cliente marca){
+        MarcaDAO marcasDAO = new MarcaDAO();
+        return marcasDAO.alterar(marca);
+    }
+    public boolean excluir(Cliente marca){
+        MarcaDAO marcasDAO = new MarcaDAO();
+        return marcasDAO.excluir(marca);
+    }
+    public Cliente procurarPorCodigo(Cliente marca){
+        MarcaDAO marcasDAO = new MarcaDAO();
+        return marcasDAO.procurarPorCodigo(marca);
+    }
+    public Cliente procurarPorDescricao(Cliente marca){
+        MarcaDAO marcasDAO = new MarcaDAO();
+        return marcasDAO.procurarPorDescricao(marca);
+    }
+    public boolean existe(Cliente marca){
+        MarcaDAO marcasDAO = new MarcaDAO();
+        return marcasDAO.existe(marca);
+    }
+    public List<Cliente> pesquisarTodos(){
+        MarcaDAO marcasDAO = new MarcaDAO();
+        return marcasDAO.pesquisarTodos();
+    }
+}

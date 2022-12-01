@@ -1,0 +1,48 @@
+package com.classes.BO;
+
+import com.classes.DTO.Faturamento;
+import com.classes.DAO.FaturamentoDAO;
+import java.util.List;
+
+public class FaturamentoDAO {
+
+    public boolean inserir(Faturamento marca){
+        if (existeNome(marca)&(existeEmail(marca)) != true) {
+        	FaturamentoDAO marcasDAO = new FaturamentoDAO();
+            return marcasDAO.inserir(marca);
+        }
+        return false;
+    }
+    public boolean alterar(Faturamento marca){
+    	FaturamentoDAO marcasDAO = new FaturamentoDAO();
+        return marcasDAO.alterar(marca);
+    }
+    public boolean excluir(Faturamento marca){
+    	FaturamentoDAO marcasDAO = new FaturamentoDAO();
+        return marcasDAO.excluir(marca);
+    }
+    public Faturamento procurarPorCodigo(Faturamento marca){
+    	FaturamentoDAO marcasDAO = new FaturamentoDAO();
+        return marcasDAO.procurarPorCodigo(marca);
+    }
+    public Faturamento procurarPorNome(Faturamento marca){
+    	FaturamentoDAO marcasDAO = new FaturamentoDAO();
+        return marcasDAO.procurarPorNome(marca);
+    }
+    public Faturamento procurarPorEmail(Faturamento marca){
+    	FaturamentoDAO marcasDAO = new FaturamentoDAO();
+        return marcasDAO.procurarPorEmail(marca);
+    }
+    public boolean existeEmail(Faturamento marca){
+    	FaturamentoDAO marcasDAO = new FaturamentoDAO();
+        return marcasDAO.existeEmail(marca);
+    }
+    public boolean existeNome(Faturamento marca){
+    	FaturamentoDAO marcasDAO = new FaturamentoDAO();
+        return marcasDAO.existeNome(marca);
+    }
+    public List<Faturamento> pesquisarTodos(){
+    	FaturamentoDAO marcasDAO = new FaturamentoDAO();
+        return marcasDAO.pesquisarTodos();
+    }
+}
