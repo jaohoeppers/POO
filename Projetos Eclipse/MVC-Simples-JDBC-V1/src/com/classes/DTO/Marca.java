@@ -10,7 +10,7 @@ public class Marca {
 	public Marca(int codigo) {
 		setCodigo(codigo);
 	}
-	public Marca(String descricao, int numero) {
+	public Marca(String descricao) {
 		setDescricao(descricao);
 		setNumero(numero);
 	}

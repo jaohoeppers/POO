@@ -15,12 +15,12 @@ public class ClienteDAO {
 
 	
 
-	    final String NOMEDATABELA = "Clientes";
+	    final String NOMEDATABELA = "Cliente";
 	    
 	    public boolean inserir(Cliente cliente) {
 	        try {
 	            Connection conn = Conexao.conectar();
-	            String sql = "INSERT INTO " + NOMEDATABELA + " (nome) VALUES (?) (email) VALUES (?) (ativo) VALUES (?);";
+	            String sql = "INSERT INTO " + NOMEDATABELA + " (nome,email,ativo) VALUES (?,?,?);";
 	            PreparedStatement ps = conn.prepareStatement(sql);
 	            ps.setString(1, cliente.getNome());
 	            ps.setString(2, cliente.getEmail());
@@ -38,7 +38,7 @@ public class ClienteDAO {
 	    public boolean alterar(Cliente cliente) {
 	        try {
 	            Connection conn = Conexao.conectar();
-	            String sql = "UPDATE " + NOMEDATABELA + " SET nome = ? SET email = ? SET ativo = ? WHERE codigo = ?;";
+	            String sql = "UPDATE " + NOMEDATABELA + " SET nome = ?, email = ?, ativo = ? WHERE codigo = ?;";
 	            PreparedStatement ps = conn.prepareStatement(sql);
 	            ps.setString(1, cliente.getNome());
 	            ps.setString(2, cliente.getEmail());

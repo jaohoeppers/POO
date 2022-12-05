@@ -20,12 +20,12 @@ public class VeiculoDAO {
 	    public boolean inserir(Veiculo veiculo) {
 	        try {
 	            Connection conn = Conexao.conectar();
-	            String sql = "INSERT INTO " + NOMEDATABELA + " (modelo,taxa) VALUES (?,?)";
+	            String sql = "INSERT INTO " + NOMEDATABELA + " (modelo, taxa, locacoes, ativo) VALUES (?,?,?,?)";
 	            PreparedStatement ps = conn.prepareStatement(sql);
 	            ps.setString(1, veiculo.getModelo());
 	            ps.setFloat(2, veiculo.getTaxa());
-	           // ps.setInt(3, veiculo.getLocacoes());
-	           // ps.setString(4, veiculo.getAtivo());
+	            ps.setInt(3, veiculo.getLocacoes());
+	            ps.setString(4, veiculo.getAtivo());
 	            ps.executeUpdate();
 	            ps.close();
 	            conn.close();
@@ -39,7 +39,7 @@ public class VeiculoDAO {
 	    public boolean alterar(Veiculo veiculo) {
 	        try {
 	            Connection conn = Conexao.conectar();
-	            String sql = "UPDATE " + NOMEDATABELA + " SET modelo = ? SET taxa = ? SET locacoes = ? SET ativo = ? WHERE codigo = ?;";
+	            String sql = "UPDATE " + NOMEDATABELA + " SET modelo = ?, taxa = ?, locacoes = ?, ativo = ? WHERE codigo = ?;";
 	            PreparedStatement ps = conn.prepareStatement(sql);
 	            ps.setString(1, veiculo.getModelo());
 	            ps.setFloat(2, veiculo.getTaxa());

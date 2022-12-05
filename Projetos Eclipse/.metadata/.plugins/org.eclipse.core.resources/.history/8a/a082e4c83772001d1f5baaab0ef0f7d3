@@ -1,0 +1,13 @@
+import enumm.TipoUsuario;
+
+public class enummMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		TipoUsuario tipo=TipoUsuario.CONTROLER;
+		System.out.println(tipo.name());
+		
+	}
+
+}

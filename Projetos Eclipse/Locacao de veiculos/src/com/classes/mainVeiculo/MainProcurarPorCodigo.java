@@ -9,7 +9,7 @@ public class MainProcurarPorCodigo {
 			
 		// Teste Procurar por Codigo
 		VeiculoBO marcaBO = new VeiculoBO();
-		Veiculo marca = new Veiculo(1);
+		Veiculo marca = new Veiculo(2);
 		marca = marcaBO.procurarPorCodigo(marca);
 		System.out.println(marca);
 		

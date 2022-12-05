@@ -12,4 +12,6 @@
     <fullyQualifiedTypeName name="com.classes.DTO.Faturamento"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="enumm.TipoUsuario"/>
+    <fullyQualifiedTypeName name="testes.Familia"/>
 </qualifiedTypeNameHistroy>

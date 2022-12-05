@@ -15,10 +15,10 @@ public class MarcaDAO {
     public boolean inserir(Marca marca) {
         try {
             Connection conn = Conexao.conectar();
-            String sql = "INSERT INTO " + NOMEDATABELA + " (descricao,numero) VALUES (?,?);";
+            String sql = "INSERT INTO " + NOMEDATABELA + " (descricao) VALUES (?);";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, marca.getDescricao());
-            ps.setInt(2, marca.getNumero());
+           // ps.setInt(2, marca.getNumero());
             ps.executeUpdate();
             ps.close();
             conn.close();

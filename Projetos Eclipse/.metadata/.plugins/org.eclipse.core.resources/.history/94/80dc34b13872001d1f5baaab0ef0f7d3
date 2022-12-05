@@ -1,0 +1,12 @@
+
+public class enumm {
+	
+	public enum TipoUsuario{
+		ADMIN,
+		USER,
+		CONTROLER,
+		TERSTER;
+		
+	}
+
+}

@@ -15,12 +15,12 @@ public class FaturamentoDAO {
 
 	
 
-	    final String NOMEDATABELA = "Faturamentos";
+	    final String NOMEDATABELA = "Faturamento";
 	    
 	    public boolean inserir(Faturamento faturamento) {
 	        try {
 	            Connection conn = Conexao.conectar();
-	            String sql = "INSERT INTO " + NOMEDATABELA + " (valor) VALUES (?) (inicio) VALUES (?) (fim) VALUES (?);";
+	            String sql = "INSERT INTO " + NOMEDATABELA + " (valor,inicio,fim) VALUES (?,?,?);";
 	            PreparedStatement ps = conn.prepareStatement(sql);
 	            ps.setDouble(1, faturamento.getValor());
 	            ps.setDate(2, faturamento.getInicio());
@@ -38,7 +38,7 @@ public class FaturamentoDAO {
 	    public boolean alterar(Faturamento faturamento) {
 	        try {
 	            Connection conn = Conexao.conectar();
-	            String sql = "UPDATE " + NOMEDATABELA + " SET valor = ? SET inicio = ? SET fim = ? WHERE codigo = ?;";
+	            String sql = "UPDATE " + NOMEDATABELA + " SET valor = ?, inicio = ?, fim = ? WHERE codigo = ?;";
 	            PreparedStatement ps = conn.prepareStatement(sql);
 	            ps.setDouble(1, faturamento.getValor());
 	            ps.setDate(2, faturamento.getInicio());

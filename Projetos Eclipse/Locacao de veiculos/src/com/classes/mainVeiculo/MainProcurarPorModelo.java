@@ -7,7 +7,7 @@ public class MainProcurarPorModelo {
 
 	public static void main(String[] args) {
 
-		// Teste Procurar por Descricao
+		// Teste Procurar por Modelo
 		// retorna o primeiro encontrado
 		VeiculoBO marcaBO = new VeiculoBO();
 		Veiculo marca = new Veiculo("Uno mille da firma");

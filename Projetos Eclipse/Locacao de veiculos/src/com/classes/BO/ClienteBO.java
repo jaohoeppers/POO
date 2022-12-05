@@ -2,12 +2,22 @@ package com.classes.BO;
 
 import com.classes.DTO.Cliente;
 import com.classes.DAO.ClienteDAO;
+
 import java.util.List;
+import java.util.Scanner;
 
 public class ClienteBO {
 
-    public boolean inserir(Cliente marca){
-        if (existeNome(marca)&(existeEmail(marca)) != true) {
+	public boolean inserir(Cliente marca){
+        if (existeNome(marca) != true) {
+        	ClienteDAO marcasDAO = new ClienteDAO();
+            return marcasDAO.inserir(marca);
+        }
+        System.out.println("Já existe um cliente com este mesmo nome, deseja adicionar outro?");
+        System.out.println("digite s para sim e n para nao");
+        Scanner ent=new Scanner(System.in);
+        String nsei = ent.nextLine();
+        if((nsei.equalsIgnoreCase("s"))==true) {
         	ClienteDAO marcasDAO = new ClienteDAO();
             return marcasDAO.inserir(marca);
         }

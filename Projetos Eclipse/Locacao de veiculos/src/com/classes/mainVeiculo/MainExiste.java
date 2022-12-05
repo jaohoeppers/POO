@@ -10,7 +10,7 @@ public class MainExiste {
 		// Teste Existe
 		// Verifica se existe outro item com a mesma descricao
 		VeiculoBO marcaBO = new VeiculoBO();
-		Veiculo marca = new Veiculo("Renault bagaceira");
+		Veiculo marca = new Veiculo("Marea quebrado");
 		if (marcaBO.existeModelo(marca))
 			System.out.println("Marca Encontrada");
 		else

@@ -9,7 +9,7 @@ public class MainProcurarPorCodigo {
 			
 		// Teste Procurar por Codigo
 		ClienteBO marcaBO = new ClienteBO();
-		Cliente marca = new Cliente(1);
+		Cliente marca = new Cliente(2);
 		marca = marcaBO.procurarPorCodigo(marca);
 		System.out.println(marca);
 		

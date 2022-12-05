@@ -9,7 +9,7 @@ public class MainAlteracao {
 			
 		// Teste Alterar	
 		VeiculoBO marcaBO = new VeiculoBO();
-		Veiculo marca = new Veiculo(1,"Fiat Fiurino Tunadona",(float)20.50,"sim");
+		Veiculo marca = new Veiculo(3,"Marea quebrado",(float) 3.60,"NAO");
 		marcaBO.alterar(marca);
 		marca = marcaBO.procurarPorCodigo(marca);
 		System.out.println(marca);
