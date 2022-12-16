@@ -8,10 +8,12 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.classes.DTO.Cliente"/>
     <fullyQualifiedTypeName name="com.classes.DTO.Veiculo"/>
-    <fullyQualifiedTypeName name="java.util.Calendar"/>
     <fullyQualifiedTypeName name="com.classes.DTO.Faturamento"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="enumm.TipoUsuario"/>
     <fullyQualifiedTypeName name="testes.Familia"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="java.util.Calendar"/>
+    <fullyQualifiedTypeName name="com.classes.DTO.Locadora"/>
 </qualifiedTypeNameHistroy>

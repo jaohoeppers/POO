@@ -14,7 +14,7 @@ public class MainExiste {
 		if (marcaBO.existeModelo(marca))
 			System.out.println("Marca Encontrada");
 		else
-			System.out.println("Nao Encontrada");
+			System.out.println("Marca nao Encontrada");
 
 	}
 }

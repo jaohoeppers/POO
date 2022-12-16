@@ -89,6 +89,7 @@ public class ClienteDAO {
 	                ps.close();
 	                rs.close();
 	                conn.close();
+	                System.out.println("Codigo nao encontrado");
 	                return null;
 	            }
 	        } catch (Exception e) {
@@ -105,8 +106,10 @@ public class ClienteDAO {
 	            ResultSet rs = ps.executeQuery();
 	            if (rs.next()) {
 	            	Cliente obj = new Cliente();
-	                obj.setCodigo(rs.getInt(1));
+	            	obj.setCodigo(rs.getInt(1));
 	                obj.setNome(rs.getString(2));
+	                obj.setEmail(rs.getString(3));
+	                obj.setAtivo(rs.getString(4));
 	                ps.close();
 	                rs.close();
 	                conn.close();
@@ -115,6 +118,7 @@ public class ClienteDAO {
 	                ps.close();
 	                rs.close();
 	                conn.close();
+	                System.out.println("Nome nao encontrado");
 	                return null;
 	            }
 	        } catch (Exception e) {
@@ -130,8 +134,10 @@ public class ClienteDAO {
 	            ResultSet rs = ps.executeQuery();
 	            if (rs.next()) {
 	            	Cliente obj = new Cliente();
-	                obj.setCodigo(rs.getInt(1));
-	                obj.setEmail(rs.getString(2));
+	            	obj.setCodigo(rs.getInt(1));
+	                obj.setNome(rs.getString(2));
+	                obj.setEmail(rs.getString(3));
+	                obj.setAtivo(rs.getString(4));
 	                ps.close();
 	                rs.close();
 	                conn.close();
@@ -140,6 +146,7 @@ public class ClienteDAO {
 	                ps.close();
 	                rs.close();
 	                conn.close();
+	                System.out.println("Email nao encontrado");
 	                return null;
 	            }
 	        } catch (Exception e) {

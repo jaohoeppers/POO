@@ -5,7 +5,7 @@ import java.sql.Connection;
 
 public class Conexao {
 
-	final static String NOME_DO_BANCO = "mvcsimplesjdbc";
+	final static String NOME_DO_BANCO = "locacaodeveiculos";
     public static Connection conectar() {
     	try {
     		Class.forName("com.mysql.jdbc.Driver");

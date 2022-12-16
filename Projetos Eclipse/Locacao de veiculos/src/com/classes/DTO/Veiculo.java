@@ -54,7 +54,6 @@ public class Veiculo {
 	public Veiculo(String modelo, float taxa) {
 		setModelo(modelo);
 		setTaxa(taxa);
-		
 	}
 	public Veiculo(int codigo){
 		setCodigo(codigo);
@@ -62,19 +61,24 @@ public class Veiculo {
 	public Veiculo(String modelo){
 		setModelo(modelo);
 	}
-	public Veiculo(){};
-	
+	public Veiculo(){}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Veiculo [modelo=");
+		builder.append("Veiculo [codigo=");
+		builder.append(codigo);
+		builder.append(", modelo=");
 		builder.append(modelo);
 		builder.append(", taxa=");
 		builder.append(taxa);
 		builder.append(", locacoes=");
 		builder.append(locacoes);
+		builder.append(", ativo=");
+		builder.append(ativo);
 		builder.append("]");
 		return builder.toString();
-	}
+	};
+	
+	
 
 }

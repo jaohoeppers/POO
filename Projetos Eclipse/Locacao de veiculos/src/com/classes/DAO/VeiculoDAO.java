@@ -92,6 +92,7 @@ public class VeiculoDAO {
 	                ps.close();
 	                rs.close();
 	                conn.close();
+	                System.out.println("Codigo nao encontrado");
 	                return null;
 	            }
 	        } catch (Exception e) {
@@ -121,6 +122,7 @@ public class VeiculoDAO {
 	                ps.close();
 	                rs.close();
 	                conn.close();
+	                System.out.println("Modelo nao encontrado");
 	                return null;
 	            }
 	        } catch (Exception e) {

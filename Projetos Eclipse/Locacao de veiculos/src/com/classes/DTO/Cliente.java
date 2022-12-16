@@ -42,6 +42,9 @@ public class Cliente {
 		setAtivo(ativo);
 		setCodigo(codigo);
 	}
+	public Cliente(String nome){
+		setNome(nome);
+	}
 	public Cliente(int codigo){
 		setCodigo(codigo);
 	}

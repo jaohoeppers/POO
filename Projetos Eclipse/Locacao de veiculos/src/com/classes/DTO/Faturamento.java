@@ -1,6 +1,7 @@
 package com.classes.DTO;
 
 import java.sql.Date;
+import java.util.Calendar;
 
 public class Faturamento {
 
@@ -18,13 +19,13 @@ public class Faturamento {
 	public Date getInicio() {
 		return inicio;
 	}
-	public void setInicio(Date inicio) {
+	public void setInicio(Date inicio) {	
 		this.inicio = inicio;
 	}
 	public Date getFim() {
 		return fim;
 	}
-	public void setFim(Date fim) {
+	public void setFim(Date fim) {	
 		this.fim = fim;
 	}
 	public int getCodigo() {
@@ -55,6 +56,23 @@ public class Faturamento {
 		setValor(valor);
 	}
 	public Faturamento(){};
+	
+	
+	public void setardatas(Calendar inicio, Calendar fim ) {
+		Date date = new Date (inicio.getTimeInMillis());	
+		setInicio(date);
+		Date date1 = new Date (fim.getTimeInMillis());	
+		setFim(date1);
+	}
+	public void setarinicio(Calendar inicio) {
+		Date date = new Date (inicio.getTimeInMillis());	
+		setInicio(date);;
+	}
+	public void setarfim(Calendar fim) {
+		Date date = new Date (fim.getTimeInMillis());	
+		setFim(date);;
+	}
+	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
